@@ -15,6 +15,16 @@ const lines = computed(() => cart.items.map((item) => ({
   extras: item.configuration.accessorySlugs.map((slug) => products.find((item) => item.slug === slug)?.name).filter(Boolean),
 })))
 
+function updateQuantity(id: string, event: Event) {
+  const value = (event.target as HTMLInputElement).valueAsNumber
+  if (Number.isInteger(value) && value >= 1 && value <= 99) cart.setQuantity(id, value)
+}
+
+function changeQuantity(id: string, event: Event) {
+  const input = event.target as HTMLInputElement
+  input.value = String(cart.setQuantity(id, input.valueAsNumber))
+}
+
 function confirm() {
   orderId.value = cart.completeDemo() ?? ''
 }
@@ -48,7 +58,7 @@ function confirm() {
             <div v-else class="line-actions">
               <label class="interior-field">Cantidad de {{ line.product?.name }}
                 <input :value="line.quantity" type="number" min="1" max="99"
-                  @change="cart.setQuantity(line.id, ($event.target as HTMLInputElement).valueAsNumber); ($event.target as HTMLInputElement).value = String(line.quantity === cart.items.find((item) => item.id === line.id)?.quantity ? line.quantity : cart.items.find((item) => item.id === line.id)?.quantity ?? 1)" />
+                  @input="updateQuantity(line.id, $event)" @change="changeQuantity(line.id, $event)" />
               </label>
               <button type="button" class="button outline" :aria-label="'Quitar ' + line.product?.name" @click="cart.remove(line.id)">Quitar</button>
             </div>

@@ -25,7 +25,9 @@ export const useCartStore = defineStore('cart', {
     },
     setQuantity(id: string, quantity: number) {
       const item = this.items.find((line) => line.id === id)
-      if (item) item.quantity = Math.min(99, Math.max(1, Math.trunc(quantity) || 1))
+      const next = Math.min(99, Math.max(1, Math.trunc(quantity) || 1))
+      if (item) item.quantity = next
+      return next
     },
     remove(id: string) {
       this.items = this.items.filter((item) => item.id !== id)
@@ -33,7 +35,7 @@ export const useCartStore = defineStore('cart', {
     completeDemo() {
       if (!this.items.length) return
       const order = {
-        id: 'WR-' + crypto.randomUUID().slice(0, 8).toUpperCase(),
+        id: 'WR-DEMO-' + String(this.orders.length + 1).padStart(3, '0'),
         date: new Date().toISOString(),
         items: this.items,
       }

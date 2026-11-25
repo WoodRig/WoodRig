@@ -11,11 +11,9 @@ useSmoothWheel()
   <SiteHeader />
   <main id="contenido" tabindex="-1">
     <RouterView v-slot="{ Component, route }">
-      <Transition name="page">
-        <div v-if="Component" :key="route.path">
-          <component :is="Component" />
-        </div>
-      </Transition>
+      <div v-if="Component" :key="route.path" class="route-page">
+        <component :is="Component" />
+      </div>
     </RouterView>
   </main>
   <SiteFooter />

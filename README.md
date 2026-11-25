@@ -18,10 +18,10 @@ Vite imprime la URL local. `npm run preview` sirve el contenido compilado de `di
 
 ## Estructura
 
-- `src/views` contiene la home y la vista provisional reutilizada por el catálogo, las páginas de marca y las rutas comerciales.
+- `src/views` contiene la home, el catálogo y las fichas, la experiencia de configuración, el flujo de pedido de prueba y las páginas de marca, ayuda y legales.
 - `src/components` reúne la navegación, el pie, el hero, la sección de ingeniería y las tarjetas de familia.
 - `src/data/catalog.ts` es la fuente de datos provisional. Las vistas pueden conservar el contrato de `src/types/catalog.ts` al conectar el catálogo a una API.
-- `src/stores/commerce.ts` declara el estado inicial del carrito y del configurador.
+- `src/stores/commerce.ts` gestiona el configurador, el carrito y los pedidos de demostración en memoria. El flujo se reinicia al recargar y no pide datos personales ni envía órdenes.
 - `src/styles` centraliza la paleta, tipografía, escalas y reglas comunes. Las composiciones cambian en 900 px y las rejillas compactas en 600 px.
 - `src/config/site.ts` centraliza el contacto, las redes y la navegación legal. Los cinco documentos de ejemplo se editan en `src/data/legal.ts`. Sustituye el titular, el contacto y las condiciones ficticias por los datos y procesos de la tienda antes de publicar.
 

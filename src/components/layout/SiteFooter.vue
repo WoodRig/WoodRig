@@ -30,6 +30,7 @@ const productLinks = [
         <p class="eyebrow">Ayuda</p>
         <RouterLink to="/soporte">Soporte y contacto</RouterLink>
         <RouterLink to="/compatibilidad">Compatibilidad</RouterLink>
+        <RouterLink to="/cuenta">Área de cliente</RouterLink>
         <a v-if="site.email" :href="'mailto:' + site.email">{{ site.email }}</a>
         <a v-for="item in site.social" :key="item.url" :href="item.url">{{ item.name }}</a>
       </nav>

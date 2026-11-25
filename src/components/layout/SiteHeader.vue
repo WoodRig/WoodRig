@@ -42,7 +42,7 @@ onUnmounted(() => window.removeEventListener('scroll', updateScroll))
       </nav>
       <div class="tools">
         <RouterLink class="config-link" to="/configurador">Configurador</RouterLink>
-        <RouterLink class="icon" to="/carrito" :aria-label="cart.count ? 'Carrito, ' + cart.count + ' artículos' : 'Carrito'">
+        <RouterLink class="icon" to="/carrito" :aria-label="cart.count ? 'Carrito, ' + cart.count + (cart.count === 1 ? ' artículo' : ' artículos') : 'Carrito'">
           <ShoppingBag :size="20" aria-hidden="true" /><span v-if="cart.count">{{ cart.count }}</span>
         </RouterLink>
         <button ref="toggle" class="icon menu-toggle" type="button" :aria-expanded="open" aria-controls="menu-movil"

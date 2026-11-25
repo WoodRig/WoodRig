@@ -35,8 +35,8 @@ main:focus { outline: none; }
 .text-link { transition: color var(--speed) var(--ease), text-underline-offset var(--speed) var(--ease); }
 .text-link:hover { color: var(--accent-hover); text-underline-offset: .45em; }
 
-.page-enter-active { transition: opacity var(--page-speed) var(--ease); }
-.page-enter-from { opacity: .18; }
+.route-page { animation: page-enter var(--page-speed) var(--ease) both; }
+@keyframes page-enter { from { opacity: .18; } to { opacity: 1; } }
 
 .skip-link { position: fixed; top: .5rem; left: .5rem; z-index: var(--layer-skip); background: var(--paper); color: var(--black); padding: .6rem 1rem; transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
