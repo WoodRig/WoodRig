@@ -1,0 +1,34 @@
+:root {
+  color-scheme: dark;
+  --black: #141413;
+  --graphite: #262523;
+  --wood-dark: #70482d;
+  --wood: #a66c3b;
+  --wood-light: #d29b64;
+  --paper: #f4f2ee;
+  --surface: #191816;
+  --ink: #f4f0e9;
+  --accent: #d6a879;
+  --accent-hover: #e6ba8d;
+  --soft: #24211e;
+  --muted: #beb5aa;
+  --focus: var(--accent);
+  --line: rgb(244 240 233 / .16);
+  --display: var(--body);
+  --body: 'Manrope Variable', system-ui, sans-serif;
+  --title: clamp(2.55rem, 4.2vw, 4.65rem);
+  --section-title: clamp(1.85rem, 3.05vw, 3.35rem);
+  --gutter: clamp(1.4rem, 6vw, 6rem);
+  --section: clamp(4.75rem, 9.5vw, 9rem);
+  --container: 82rem;
+  --radius: .2rem;
+  --header: 4.75rem;
+  --layer-header: 10;
+  --layer-skip: 20;
+  --speed: .28s;
+  --page-speed: .36s;
+  --ease: cubic-bezier(.22,1,.36,1);
+  --shadow: 0 .75rem 2rem rgb(0 0 0 / .22);
+}
+
+/* 900px: navegación y composiciones editoriales. 600px: rejillas compactas. */
