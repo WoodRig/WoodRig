@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Menu, ShoppingBag, X } from 'lucide-vue-next'
 import { primaryNav } from '../../router'
@@ -17,11 +17,8 @@ function dismiss() {
   toggle.value?.focus()
 }
 
-watch(() => route.fullPath, async () => {
-  if (!open.value) return
+watch(() => route.fullPath, () => {
   open.value = false
-  await nextTick()
-  document.getElementById('contenido')?.focus({ preventScroll: true })
 })
 
 onMounted(() => {
