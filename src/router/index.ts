@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { site } from '../config/site'
+import { updatePageMetadata } from './metadata'
 
 export const primaryNav = [
   { path: '/cockpits', label: 'Cockpits' },
@@ -17,16 +18,18 @@ export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: () => import('../views/HomeView.vue') },
-    { path: '/productos', component: catalog, meta: { title: 'Toda la gama' } },
-    ...primaryNav.slice(0, 4).map(({ path, label }) => ({ path, component: catalog, meta: { title: label } })),
-    { path: '/configurador', component: () => import('../views/ConfiguratorView.vue'), meta: { title: 'Configurador' } },
-    { path: '/ingenieria', component: brand, meta: { title: 'Ingeniería' } },
-    { path: '/nosotros', component: brand, meta: { title: 'Sobre WoodRig' } },
-    { path: '/compatibilidad', component: () => import('../views/CompatibilityView.vue'), meta: { title: 'Compatibilidad' } },
-    { path: '/soporte', component: () => import('../views/SupportView.vue'), meta: { title: 'Soporte' } },
-    { path: '/carrito', component: commerce, meta: { title: 'Carrito' } },
-    { path: '/checkout', component: commerce, meta: { title: 'Checkout de demostración' } },
-    { path: '/cuenta', component: () => import('../views/AccountView.vue'), meta: { title: 'Área de cliente' } },
+    { path: '/productos', component: catalog, meta: { title: 'Toda la gama', description: 'Explora los cockpits, soportes, accesorios y packs de simracing que WoodRig está desarrollando.' } },
+    ...primaryNav.slice(0, 4).map(({ path, label }) => ({
+      path, component: catalog, meta: { title: label, description: `Explora la familia ${label.toLowerCase()} de WoodRig y descubre sus propuestas para tu equipo de simracing.` },
+    })),
+    { path: '/configurador', component: () => import('../views/ConfiguratorView.vue'), meta: { title: 'Configurador', description: 'Elige un modelo WoodRig, combina componentes y comparte tu configuración de simracing.' } },
+    { path: '/ingenieria', component: brand, meta: { title: 'Ingeniería', description: 'Descubre cómo WoodRig plantea la estructura, las uniones y los materiales de sus cockpits y soportes.' } },
+    { path: '/nosotros', component: brand, meta: { title: 'Sobre WoodRig', description: 'Conoce la marca WoodRig y su enfoque para diseñar equipos de simracing que encajen en casa.' } },
+    { path: '/compatibilidad', component: () => import('../views/CompatibilityView.vue'), meta: { title: 'Compatibilidad', description: 'Consulta qué debes medir en tu volante, pedalera y asiento antes de elegir un equipo WoodRig.' } },
+    { path: '/soporte', component: () => import('../views/SupportView.vue'), meta: { title: 'Soporte', description: 'Consulta las preguntas frecuentes sobre la gama WoodRig, la compatibilidad y los pedidos de prueba.' } },
+    { path: '/carrito', component: commerce, meta: { title: 'Carrito', privateDemo: true } },
+    { path: '/checkout', component: commerce, meta: { title: 'Checkout de demostración', privateDemo: true } },
+    { path: '/cuenta', component: () => import('../views/AccountView.vue'), meta: { title: 'Área de cliente', privateDemo: true } },
     ...site.legal.map(({ name, path, id }) => ({
       path,
       component: () => import('../views/LegalView.vue'),
@@ -47,6 +50,6 @@ export const router = createRouter({
   },
 })
 
-router.afterEach((to) => {
-  document.title = to.meta.title ? String(to.meta.title) + ' | WoodRig' : 'WoodRig | Simracing con carácter'
+router.afterEach((to, _from, failure) => {
+  if (!failure) updatePageMetadata(to)
 })

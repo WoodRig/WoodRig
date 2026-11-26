@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PageIntro from '../components/common/PageIntro.vue'
 import ProductCard from '../components/products/ProductCard.vue'
@@ -16,7 +16,6 @@ const related = computed(() => {
     .slice(0, 3) : []
 })
 const added = ref(false)
-watchEffect(() => { document.title = (product.value?.name ?? 'Producto no encontrado') + ' | WoodRig' })
 
 function add() {
   if (!product.value) return
