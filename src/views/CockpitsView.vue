@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import PageIntro from '../components/common/PageIntro.vue'
+import ProductPrice from '../components/products/ProductPrice.vue'
 import { products } from '../data/catalog'
 
 const models = products.filter(({ category }) => category.slug === 'cockpits')
@@ -20,6 +21,7 @@ const active = computed(() => models.find(({ slug }) => slug === selected.value)
           <p class="eyebrow">{{ model.status }}</p>
           <h2>{{ model.name }}</h2>
           <p class="lede">{{ model.description }}</p>
+          <ProductPrice :price="model.price" />
           <RouterLink class="text-link" :to="{ name: 'product', params: { slug: model.slug } }">Ver ficha {{ model.name }}</RouterLink>
         </div>
       </article>

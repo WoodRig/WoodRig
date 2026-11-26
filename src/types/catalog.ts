@@ -17,6 +17,7 @@ export interface Product {
   name: string
   description: string
   category: Category
+  price: number
   status: string
   pending: readonly string[]
   demo?: true

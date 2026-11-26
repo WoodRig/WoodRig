@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Product } from '../../types/catalog'
+import ProductPrice from './ProductPrice.vue'
 
 defineProps<{ product: Product }>()
 </script>
@@ -15,6 +16,7 @@ defineProps<{ product: Product }>()
         <p class="eyebrow">{{ product.status }}</p>
         <h3>{{ product.name }}</h3>
         <p class="description">{{ product.description }}</p>
+        <ProductPrice :price="product.price" />
         <span class="text-link">Ver {{ product.name }}</span>
       </div>
     </RouterLink>

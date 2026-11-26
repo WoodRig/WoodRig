@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import PageIntro from '../components/common/PageIntro.vue'
+import ProductPrice from '../components/products/ProductPrice.vue'
 import { configurationOptions, demoProducts, parseConfiguration } from '../data/configuration'
 import { useCartStore, useConfigurationStore } from '../stores/commerce'
 
@@ -57,6 +58,7 @@ function add() {
             <option v-for="item in demoProducts" :key="item.slug" :value="item.slug">{{ item.name }}</option>
           </select>
         </label>
+        <ProductPrice v-if="product" :price="product.price" />
         <fieldset class="extras">
           <legend>Componentes adicionales</legend>
           <label v-for="item in options" :key="item.slug">

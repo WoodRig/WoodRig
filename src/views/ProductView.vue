@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PageIntro from '../components/common/PageIntro.vue'
 import ProductCard from '../components/products/ProductCard.vue'
+import ProductPrice from '../components/products/ProductPrice.vue'
 import { products } from '../data/catalog'
 import { useCartStore } from '../stores/commerce'
 
@@ -35,6 +36,8 @@ function add() {
           <figcaption class="interior-caption">Render conceptual · {{ product.name }}</figcaption>
         </figure>
         <div class="interior-panel">
+          <ProductPrice :price="product.price" />
+          <p class="price-note">Estimación pendiente de confirmar. El envío se calcularía por separado.</p>
           <h2>Qué queda por validar</h2>
           <ul class="interior-list"><li v-for="item in product.pending" :key="item">{{ item }}</li></ul>
           <p class="lede">Las especificaciones y la compatibilidad se publicarán cuando se comprueben con equipos reales.</p>
@@ -64,5 +67,6 @@ function add() {
 .related h2 { margin-bottom: 1.75rem; }
 .added, .demo, .compare { margin-top: 1.25rem; }
 .category { margin-bottom: .8rem; }
+.price-note { color: var(--muted); font-size: .88rem; margin-bottom: 1.5rem; }
 .interior-panel .interior-list { margin-bottom: 1.15rem; }
 </style>

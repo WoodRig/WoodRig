@@ -26,3 +26,5 @@ El contraste con el piloto anterior importa. Una caja de pedales permite comprar
 - **Preparar producción.** Probar la secuencia de embalaje, facilidad de montaje con instrucciones, dimensiones reales del bulto y protección de acabados. Conservar versiones y lista de piezas. La geometría de una interfaz compartida se consolida después del ensayo, junto con los datos de las variantes probadas.
 
 La lista define el **catálogo conceptual** de esta entrega. El orden expresa prioridad de trabajo. Cada ficha indica su estado y las pruebas pendientes. [Piloto y costes](costes-y-viabilidad.md) · [Investigación anterior](mercado-y-competencia.md)
+
+Los importes públicos del catálogo son hipótesis redondeadas sin envío. Los 519 € de Rally trasladan al escaparate la referencia interna de 429 € netos. El resto se sitúa frente a referencias de la categoría, con un precio de pack inferior a la suma de los soportes. Sustituirlos al cerrar cotizaciones y validar la disposición a pagar.
