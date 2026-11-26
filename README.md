@@ -2,6 +2,8 @@
 
 Web comercial de una gama de cockpits y soportes de simracing en desarrollo.
 
+[Investigación y decisiones del piloto Rally](docs/README.md).
+
 ## Desarrollo local
 
 Requisitos: Node.js 22 y npm.
