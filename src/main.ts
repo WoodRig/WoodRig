@@ -6,5 +6,8 @@ import './styles/global.css'
 import './styles/pages.css'
 import App from './App.vue'
 import { router } from './router'
+import { persistDemoCart } from './stores/commerce'
 
-createApp(App).use(createPinia()).use(router).mount('#app')
+const app = createApp(App).use(createPinia())
+persistDemoCart()
+app.use(router).mount('#app')

@@ -5,7 +5,7 @@ const questions = [
   { question: '¿Cómo sé si mi volante o pedalera encajará?', answer: 'Consulta la guía de compatibilidad y reúne las medidas y los datos de montaje que indica el fabricante de tu equipo.', path: '/compatibilidad', link: 'Ver guía de compatibilidad' },
   { question: '¿Qué diferencia hay entre Formula y Rally?', answer: 'Formula parte de una posición más reclinada. Rally propone una postura más vertical. Las imágenes actuales muestran ambos conceptos.', path: '/cockpits', link: 'Comparar cockpits' },
   { question: '¿Puedo comprar desde esta web?', answer: 'Puedes probar el catálogo, el configurador y la confirmación de un pedido de demostración. La tienda todavía no admite pagos ni envíos.', path: '/condiciones-de-compra', link: 'Ver condiciones de ejemplo' },
-  { question: '¿Dónde consulto un pedido de prueba?', answer: 'El área de cliente recoge los pedidos confirmados en esta sesión. El historial se reinicia al recargar la página.', path: '/cuenta', link: 'Abrir área de cliente' },
+  { question: '¿Dónde consulto un pedido de prueba?', answer: 'El área de cliente recoge los pedidos confirmados en esta pestaña y los conserva al recargarla.', path: '/cuenta', link: 'Abrir área de cliente' },
 ]
 </script>
 

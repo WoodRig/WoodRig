@@ -10,7 +10,7 @@ const names = new Map(products.map(({ slug, name }) => [slug, name]))
 
 <template>
   <div class="wrap interior">
-    <PageIntro label="Área de cliente" title="Tus pedidos." description="Consulta los pedidos de demostración realizados durante esta sesión. El historial se reinicia al recargar la página." />
+    <PageIntro label="Área de cliente" title="Tus pedidos." description="Consulta los pedidos de demostración realizados en esta pestaña." />
     <div v-if="!cart.orders.length" class="interior-panel">
       <h2>Todavía no hay pedidos</h2>
       <p>Prueba el configurador o añade un producto al carrito para simular tu primer pedido.</p>

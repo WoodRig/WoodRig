@@ -25,7 +25,7 @@ export const legalPages: Record<string, LegalPage> = {
     intro: 'Ejemplo de cómo WoodRig informaría sobre el tratamiento de datos en la tienda.',
     sections: [
       { title: 'Responsable', text: `${exampleCompany}, con domicilio de ejemplo en ${exampleAddress}. Dirección de ejemplo para privacidad: ${exampleEmail}.` },
-      { title: 'La web actual', text: 'Esta versión presenta el catálogo y permite simular pedidos sin solicitar datos personales. El historial de demostración se conserva en memoria durante la sesión de navegación. En producción, el proveedor de alojamiento podría registrar datos técnicos de acceso y seguridad.' },
+      { title: 'La web actual', text: 'Esta versión presenta el catálogo y permite simular pedidos sin solicitar datos personales. El historial de demostración se guarda en el almacenamiento de sesión del navegador. En producción, el proveedor de alojamiento podría registrar datos técnicos de acceso y seguridad.' },
       { title: 'Finalidades y bases jurídicas previstas', text: 'Al habilitar la tienda, se usarían los datos de contacto, entrega y pedido para gestionar la compra, la expedición y la posventa sobre la base del contrato. La facturación y las obligaciones tributarias se atenderían por obligación legal. Las promociones por correo se enviarían con consentimiento y una opción de baja.' },
       { title: 'Conservación y destinatarios', text: 'En el ejemplo, los datos de los pedidos se conservarían mientras se gestione la compra y durante los plazos exigidos por ley. Los proveedores de alojamiento, transporte y pagos recibirían los datos necesarios para su servicio. El plazo de los registros técnicos, los proveedores definitivos y sus posibles transferencias internacionales se documentarán antes del lanzamiento.' },
       { title: 'Tus derechos', text: `Puedes solicitar acceso, rectificación, supresión, oposición, limitación y portabilidad cuando procedan, retirar tu consentimiento y presentar una reclamación ante la AEPD. El canal de contacto del ejemplo es ${exampleEmail}.` },
@@ -36,7 +36,7 @@ export const legalPages: Record<string, LegalPage> = {
     title: 'Política de cookies',
     intro: 'Qué tecnologías de almacenamiento utiliza esta versión de WoodRig.',
     sections: [
-      { title: 'Uso actual', text: 'La aplicación actual no instala cookies ni utiliza almacenamiento persistente para analítica, publicidad o personalización. El carrito, las selecciones y los pedidos de demostración se guardan en memoria y se pierden al recargar la aplicación.' },
+      { title: 'Uso actual', text: 'La aplicación usa almacenamiento de sesión para recuperar el carrito y los pedidos de demostración al recargar la pestaña. La selección del configurador se conserva en memoria o se puede compartir mediante su enlace.' },
       { title: 'Si se incorporan cookies en producción', text: 'La versión publicada detallará el proveedor, la finalidad y la duración de cada tecnología. Las opciones para aceptar y rechazar las cookies opcionales aparecerán en el mismo nivel y sus preferencias podrán cambiarse posteriormente.' },
       { title: 'Configuración del navegador', text: 'Puedes consultar, bloquear o borrar las cookies desde los ajustes de privacidad de tu navegador.' },
     ],
