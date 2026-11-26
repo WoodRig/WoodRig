@@ -15,8 +15,9 @@ export const useCartStore = defineStore('cart', {
   },
   actions: {
     add(configuration: Configuration) {
-      const selection = parseConfiguration(configuration.productSlug, configuration.accessorySlugs)
-      if (!selection) return
+      const parsed = parseConfiguration(configuration.productSlug, configuration.accessorySlugs)
+      if (!parsed) return
+      const selection = { ...parsed, variantId: configuration.variantId }
       const id = cartItemId(selection)
       const item = this.items.find((line) => line.id === id)
       if (item) this.setQuantity(id, item.quantity + 1)
@@ -38,8 +39,10 @@ export const useCartStore = defineStore('cart', {
         date: new Date().toISOString(),
         items: this.items,
       }
-      this.orders.unshift(order)
-      this.items = []
+      this.$patch((state) => {
+        state.orders.unshift(order)
+        state.items = []
+      })
       return order.id
     },
   },
@@ -75,6 +78,7 @@ function readItems(value: unknown): CartItem[] {
     const quantity = item?.quantity
     if (!configuration || typeof quantity !== 'number' || !Number.isFinite(quantity) || quantity < 1) continue
 
+    if (typeof saved?.variantId === 'string') configuration.variantId = saved.variantId
     const id = cartItemId(configuration)
     items.set(id, { id, configuration, quantity: clampQuantity(quantity + (items.get(id)?.quantity ?? 0)) })
   }
