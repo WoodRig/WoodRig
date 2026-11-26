@@ -16,6 +16,13 @@ npm run build
 
 Vite imprime la URL local. `npm run preview` sirve el contenido compilado de `dist/`. El alojamiento estático debe resolver las rutas de la aplicación con `index.html` y servir los archivos existentes directamente.
 
+## Verificación de la V1
+
+- Revisa la portada en móvil, tablet y escritorio. Comprueba que no haya desplazamiento horizontal y que el selector del hero muestre la imagen y el pie correspondientes.
+- Abre y cierra el menú móvil con teclado. Al cambiar de página, el foco debe quedar en el contenido principal. Los enlaces a secciones deben desplazarse hasta su destino bajo la cabecera.
+- Desde el configurador, añade una selección al carrito, revisa el pedido y confirma la simulación. Comprueba que aparezca la misma referencia en el área de cliente durante la sesión.
+- Abre directamente una ficha y una página legal en la vista previa. Comprueba que carguen al recargar y que la consola no muestre errores.
+
 ## Estructura
 
 - `src/views` contiene la home, el catálogo y las fichas, la experiencia de configuración, el flujo de pedido de prueba y las páginas de marca, ayuda y legales.
