@@ -47,18 +47,21 @@ export const products: Product[] = [
     status: 'Interfaz por definir',
     description: 'Placa sustituible para estudiar cómo montar distintas bases de volante en el bastidor.',
     pending: ['Patrones de tornillos, acceso a los conectores y recorrido de ajuste.', 'Flexión y giro de la placa con bases de referencia.'],
+    media: { image: '/images/woodrig-placa-volante.webp', alt: 'Render de una placa de acero negro con ranuras y orificios de montaje' },
   },
   {
     slug: 'soporte-cambio-freno', name: 'Soporte para cambio y freno', category: accessories, price: 59,
     status: 'Concepto en estudio',
     description: 'Brazo lateral para situar la palanca de cambio o el freno de mano al alcance del asiento.',
     pending: ['Montaje a la izquierda o derecha y espacio para accionar las palancas.', 'Rigidez de la unión lateral y desgaste con uso repetido.'],
+    media: { image: '/images/woodrig-soporte-cambio-freno.webp', alt: 'Render de un brazo lateral con bandeja ranurada y fijación a un lateral de madera' },
   },
   {
     slug: 'adaptador-asiento', name: 'Adaptador y guías de asiento', category: seats, price: 69,
     status: 'Interfaz por definir',
     description: 'Adaptador para montar guías de asiento de terceros y estudiar el recorrido de ajuste.',
     pending: ['Patrón de anclaje, recorrido útil y bloqueo con las guías seleccionadas.', 'Acceso a los tornillos y carga del conjunto montado.'],
+    media: { image: '/images/woodrig-adaptador-asiento.webp', alt: 'Render de dos guías de asiento negras sobre adaptadores de madera' },
   },
   {
     slug: 'accessories', name: 'Asiento de referencia', category: seats, price: 179, demo: true,
@@ -72,12 +75,14 @@ export const products: Product[] = [
     status: 'Concepto en estudio',
     description: 'Base independiente del cockpit para colocar una pantalla frente al asiento.',
     pending: ['Patrón VESA y margen de ajuste con pantallas de referencia.', 'Estabilidad, huella y transporte con la base desmontada.'],
+    media: { image: '/images/woodrig-soporte-monitor.webp', alt: 'Render de un soporte con base de madera y columna negra para una pantalla' },
   },
   {
     slug: 'kit-repuestos', name: 'Kit de montaje y repuestos', category: spares, price: 19,
     status: 'Pendiente de despiece',
     description: 'Selección prevista de tornillos, insertos y apoyos identificados por versión de montaje.',
     pending: ['Inventario de piezas por revisión y forma de identificar cada recambio.', 'Par de montaje, repetición de uso y contenido final del kit.'],
+    media: { image: '/images/woodrig-kit-repuestos.webp', alt: 'Render de tornillos, insertos, arandelas y apoyos junto a un sobre' },
   },
   {
     slug: 'formula', name: 'Formula', category: cockpits, price: 599, demo: true,

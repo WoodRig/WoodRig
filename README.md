@@ -38,7 +38,7 @@ Vite imprime la URL local. `npm run preview` sirve el contenido compilado de `di
 
 ## Imágenes y experiencias de producto
 
-Los WebP de `public/images` son renders conceptuales creados con la herramienta integrada de imágenes tomando como referencia las dos láminas facilitadas por Jordi. El hero carga una variante más ligera en móvil y las tarjetas muestran una imagen específica de cada familia.
+Los WebP de `public/images` son renders conceptuales de WoodRig. Los primeros parten de las dos láminas facilitadas por Jordi. Los renders de placas, soportes, guías y repuestos parten de la arquitectura de montaje descrita en el [inventario de competencia](docs/inventario-competencia.md). El hero carga una variante más ligera en móvil y cada ficha muestra su propio concepto.
 
 La dirección visual usa luz suave, perfiles delgados de roble laminado, huecos mecanizados y uniones discretas de acero negro. Los prompts solicitan un cockpit Rally vertical, un Formula reclinado, un soporte de volante, un soporte de pedalera, un asiento y un pack de dos soportes. Las escenas editoriales muestran una articulación, un estudio de plegado y muestras de materiales. Las medidas y las afirmaciones técnicas de las láminas quedan fuera del contenido público.
 
