@@ -1,31 +1,26 @@
 import type { RouteLocationNormalized } from 'vue-router'
-import { products } from '../data/catalog'
-
-const defaults = {
-  title: 'WoodRig | Simracing con carácter',
-  description: 'Descubre WoodRig, una gama de cockpits y soportes de simracing en desarrollo, diseñada en torno a la estabilidad, el espacio y la modularidad.',
-  image: '/images/woodrig-rally.webp',
-}
+import { publicOrigin, searchPageFor } from '../data/search'
 
 export function updatePageMetadata(route: RouteLocationNormalized) {
-  const product = route.name === 'product'
-    ? products.find(({ slug }) => slug === route.params.slug)
-    : undefined
-  const missingProduct = route.name === 'product' && !product
-  const label = product?.name ?? (missingProduct ? 'Producto no encontrado' : route.meta.title)
-  const title = typeof label === 'string' ? label + ' | WoodRig' : defaults.title
-  const description = product?.description ?? (missingProduct
-    ? 'Esta familia no está disponible en el catálogo de WoodRig.'
-    : typeof route.meta.description === 'string' ? route.meta.description : defaults.description)
-  const image = new URL(product?.media?.image ?? defaults.image, window.location.origin).href
+  const metadata = searchPageFor(route.path)
+  const origin = publicOrigin(import.meta.env.VITE_SITE_URL)
 
-  document.title = title
-  setContent('meta[name="description"]', description)
-  setContent('meta[property="og:title"]', title)
-  setContent('meta[property="og:description"]', description)
-  setContent('meta[property="og:image"]', image)
-  setContent('meta[name="robots"]', route.meta.privateDemo || missingProduct || route.name === 'not-found'
-    ? 'noindex, follow' : 'index, follow')
+  document.title = metadata.title
+  setContent('meta[name="description"]', metadata.description)
+  setContent('meta[property="og:title"]', metadata.title)
+  setContent('meta[property="og:description"]', metadata.description)
+  setContent('meta[property="og:image"]', new URL(metadata.image, origin ?? window.location.origin).href)
+  setContent('meta[name="robots"]', metadata.noindex ? 'noindex, follow' : 'index, follow')
+
+  const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+  if (!origin || metadata.noindex) {
+    canonical?.remove()
+  } else {
+    const link = canonical ?? document.createElement('link')
+    link.rel = 'canonical'
+    link.href = new URL(route.path.toLowerCase().replace(/\/$/, '') || '/', origin).href
+    if (!canonical) document.head.append(link)
+  }
 }
 
 function setContent(selector: string, value: string) {

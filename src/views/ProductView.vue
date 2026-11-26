@@ -42,6 +42,7 @@ function add() {
           </div>
           <p v-if="added" class="added" role="status">Añadido al carrito. <RouterLink class="text-link" to="/carrito">Ver carrito</RouterLink></p>
           <button class="button outline demo" type="button" @click="add">Añadir al carrito de prueba</button>
+          <p v-if="product.category.slug === 'cockpits'" class="compare"><RouterLink class="text-link" to="/cockpits">Comparar Rally y Formula</RouterLink></p>
         </div>
       </div>
       <section class="related" aria-labelledby="related-title">
@@ -59,5 +60,5 @@ function add() {
 <style scoped>
 .related { margin-top: var(--section); }
 .related h2 { margin-bottom: 1.75rem; }
-.added, .demo { margin-top: 1.25rem; }
+.added, .demo, .compare { margin-top: 1.25rem; }
 </style>
