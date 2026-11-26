@@ -11,12 +11,13 @@ const active = computed(() => models.find(({ slug }) => slug === selected.value)
 <template>
   <div class="wrap interior">
     <PageIntro label="Cockpits WoodRig" title="Dos formas de sentarte al volante."
-      description="Compara la postura de Rally y Formula. Ambos modelos están en desarrollo." />
+      description="Rally es el primer cockpit previsto. Formula explora una postura más reclinada para una fase posterior." />
 
     <div class="models">
       <article v-for="model in models" :key="model.slug" class="model">
         <img v-if="model.media?.image" :src="model.media.image" :alt="model.media.alt ?? model.name" width="960" height="640" />
         <div>
+          <p class="eyebrow">{{ model.status }}</p>
           <h2>{{ model.name }}</h2>
           <p class="lede">{{ model.description }}</p>
           <RouterLink class="text-link" :to="{ name: 'product', params: { slug: model.slug } }">Ver ficha {{ model.name }}</RouterLink>
@@ -51,6 +52,7 @@ const active = computed(() => models.find(({ slug }) => slug === selected.value)
 .model img { aspect-ratio: 1.5; object-fit: cover; }
 .model div { padding: clamp(1rem, 3vw, 2rem); }
 .model h2 { font: 700 clamp(3rem, 6vw, 5rem)/.85 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.model .eyebrow { margin-bottom: .75rem; }
 .model .lede { margin-block: .75rem 1.1rem; }
 .next { margin-top: clamp(3rem, 6vw, 6rem); border-top: 1px solid var(--line); padding-top: 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; }
 .next h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); margin-bottom: .6rem; }

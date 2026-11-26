@@ -1,5 +1,7 @@
 # Roadmap del piloto WoodRig
 
+La [propuesta de gama actualizada](propuesta-gama.md) sitúa Pedals como primera muestra funcional y Rally como primer cockpit fijo desmontable. Los hitos de abajo recogen el plan anterior del piloto.
+
 ## Entrega de investigación y web
 
 | Fase | Resultado | Referencia |

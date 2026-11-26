@@ -15,7 +15,7 @@ const engineering = {
   sections: [
     { title: 'Estructura', text: 'La triangulación ayuda a repartir los esfuerzos entre la base y el soporte del volante. Las dimensiones y la resistencia final se determinarán durante el prototipado.' },
     { title: 'Materiales', text: 'La madera laminada define la estructura visible. Las piezas de acero se concentran en las articulaciones y los puntos de unión.' },
-    { title: 'Plegado', text: 'La posición plegada se estudia junto a la posición de conducción, para proteger la ergonomía y reducir el espacio ocupado entre sesiones.' },
+    { title: 'Montaje y recogida', text: 'El primer Rally parte de un bastidor fijo desmontable para transporte. El plegado en casa queda como un estudio posterior.' },
   ],
 }
 const brand = {

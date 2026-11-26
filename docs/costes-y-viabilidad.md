@@ -1,5 +1,7 @@
 # Costes y viabilidad del piloto Rally
 
+La [propuesta de gama posterior](propuesta-gama.md) conserva Rally como primer cockpit y sitúa Pedals como primera muestra. El modelo de abajo es la hipótesis histórica del cockpit y debe recalcularse con despiece y cotizaciones.
+
 Modelo interno en euros sin IVA. Cada pedido contiene un cockpit Rally con asiento, sin electrónica, entregado en España peninsular. Las cifras son hipótesis para comparar decisiones. Los precios de competidores se observan en escaparate y deben normalizarse por impuestos, asiento y envío antes de compararlos con este modelo.
 
 | Por pedido | Conservador | Base | Favorable |

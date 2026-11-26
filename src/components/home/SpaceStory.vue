@@ -63,7 +63,7 @@ onUnmounted(() => {
         </figure>
         <div class="storage-step">
           <h3>Cuando recoges</h3>
-          <p class="lede">Mide el hueco de guardado y el paso más estrecho. El estudio muestra la idea de recogida. El mecanismo y lo que podrá quedar montado están por validar.</p>
+          <p class="lede">Mide el hueco de guardado y el paso más estrecho. La imagen explora una posible recogida. El primer Rally se plantea fijo y desmontable para el transporte.</p>
           <RouterLink class="text-link" to="/compatibilidad">Abrir la guía de medidas</RouterLink>
         </div>
       </div>

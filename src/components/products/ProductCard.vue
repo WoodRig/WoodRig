@@ -7,12 +7,12 @@ defineProps<{ product: Product }>()
 <template>
   <article class="card">
     <RouterLink :to="{ name: 'product', params: { slug: product.slug } }">
-      <div class="product-media">
-        <img v-if="product.media?.image" :src="product.media.image" :alt="product.media.alt || product.name"
+      <div v-if="product.media?.image" class="product-media">
+        <img :src="product.media.image" :alt="product.media.alt || product.name"
           width="960" height="640" loading="lazy" decoding="async" />
       </div>
       <div class="info">
-        <p class="eyebrow">{{ product.category.name }}</p>
+        <p class="eyebrow">{{ product.status }}</p>
         <h3>{{ product.name }}</h3>
         <p class="description">{{ product.description }}</p>
         <span class="text-link">Ver {{ product.name }}</span>
@@ -24,6 +24,7 @@ defineProps<{ product: Product }>()
 <style scoped>
 .card { min-width: 0; }
 .card a { display: block; height: 100%; }
+.card a:not(:has(.product-media)) { border-top: 1px solid var(--accent); }
 .product-media {
   aspect-ratio: 3/2;
   overflow: hidden;

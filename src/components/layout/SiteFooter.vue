@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { site } from '../../config/site'
+import { categories } from '../../data/catalog'
 
 const productLinks = [
   { label: 'Toda la gama', path: '/productos' },
-  { label: 'Cockpits', path: '/cockpits' },
-  { label: 'Soportes', path: '/soportes' },
-  { label: 'Accesorios', path: '/accesorios' },
-  { label: 'Packs', path: '/packs' },
+  ...categories.map(({ name, slug }) => ({ label: name, path: '/' + slug })),
 ]
 </script>
 

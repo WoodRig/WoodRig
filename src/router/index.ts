@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { site } from '../config/site'
+import { categories } from '../data/catalog'
 import { updatePageMetadata } from './metadata'
 
 export const primaryNav = [
+  { path: '/productos', label: 'Gama' },
   { path: '/cockpits', label: 'Cockpits' },
   { path: '/soportes', label: 'Soportes' },
   { path: '/accesorios', label: 'Accesorios' },
-  { path: '/packs', label: 'Packs' },
   { path: '/ingenieria', label: 'Ingeniería' },
 ]
 
@@ -20,7 +21,8 @@ export const router = createRouter({
     { path: '/', name: 'home', component: () => import('../views/HomeView.vue') },
     { path: '/productos', component: catalog },
     { path: '/cockpits', component: () => import('../views/CockpitsView.vue') },
-    ...primaryNav.slice(1, 4).map(({ path }) => ({ path, component: catalog })),
+    ...categories.filter(({ slug }) => slug !== 'cockpits')
+      .map(({ slug }) => ({ path: '/' + slug, component: catalog })),
     { path: '/configurador', component: () => import('../views/ConfiguratorView.vue') },
     { path: '/ingenieria', component: brand },
     { path: '/nosotros', component: brand },

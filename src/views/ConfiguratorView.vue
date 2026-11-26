@@ -2,8 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import PageIntro from '../components/common/PageIntro.vue'
-import { products } from '../data/catalog'
-import { configurationOptions, parseConfiguration } from '../data/configuration'
+import { configurationOptions, demoProducts, parseConfiguration } from '../data/configuration'
 import { useCartStore, useConfigurationStore } from '../stores/commerce'
 
 const route = useRoute()
@@ -13,7 +12,7 @@ const configuration = useConfigurationStore()
 const model = ref('')
 const extras = ref<string[]>([])
 const added = ref(false)
-const product = computed(() => products.find(({ slug }) => slug === model.value))
+const product = computed(() => demoProducts.find(({ slug }) => slug === model.value))
 const options = computed(() => configurationOptions(model.value))
 const showShare = ref(false)
 const shareUrl = computed(() => new URL(router.resolve({
@@ -55,7 +54,7 @@ function add() {
         <h2>Tu configuración</h2>
         <label class="interior-field">Modelo base
           <select v-model="model" @change="changeModel">
-            <option v-for="item in products" :key="item.slug" :value="item.slug">{{ item.name }}</option>
+            <option v-for="item in demoProducts" :key="item.slug" :value="item.slug">{{ item.name }}</option>
           </select>
         </label>
         <fieldset class="extras">

@@ -27,21 +27,23 @@ function add() {
 <template>
   <div class="wrap interior">
     <template v-if="product">
-      <PageIntro :label="product.category.name" :title="product.name" :description="product.description" />
-      <div class="interior-split">
+      <nav aria-label="Categoría" class="category"><RouterLink class="text-link" :to="'/' + product.category.slug">{{ product.category.name }}</RouterLink></nav>
+      <PageIntro :label="product.status" :title="product.name" :description="product.description" />
+      <div :class="{ 'interior-split': product.media?.image }">
         <figure v-if="product.media?.image">
           <img class="interior-image" :src="product.media.image" :alt="product.media.alt || product.name" width="960" height="640" />
           <figcaption class="interior-caption">Render conceptual · {{ product.name }}</figcaption>
         </figure>
         <div class="interior-panel">
-          <h2>Comprueba si encaja con tu equipo</h2>
-          <p class="lede">Concepto en desarrollo. Las medidas, el montaje y la compatibilidad específica están pendientes de validación.</p>
+          <h2>Qué queda por validar</h2>
+          <ul class="interior-list"><li v-for="item in product.pending" :key="item">{{ item }}</li></ul>
+          <p class="lede">Las especificaciones y la compatibilidad se publicarán cuando se comprueben con equipos reales.</p>
           <div class="actions">
             <RouterLink class="button" to="/compatibilidad">Consultar qué medir</RouterLink>
-            <RouterLink class="button outline" :to="{ path: '/configurador', query: { modelo: product.slug } }">Probar configuración</RouterLink>
+            <RouterLink v-if="product.demo" class="button outline" :to="{ path: '/configurador', query: { modelo: product.slug } }">Probar configuración</RouterLink>
           </div>
           <p v-if="added" class="added" role="status">Añadido al carrito. <RouterLink class="text-link" to="/carrito">Ver carrito</RouterLink></p>
-          <button class="button outline demo" type="button" @click="add">Añadir al carrito de prueba</button>
+          <button v-if="product.demo" class="button outline demo" type="button" @click="add">Añadir al carrito de prueba</button>
           <p v-if="product.category.slug === 'cockpits'" class="compare"><RouterLink class="text-link" to="/cockpits">Comparar Rally y Formula</RouterLink></p>
         </div>
       </div>
@@ -61,4 +63,6 @@ function add() {
 .related { margin-top: var(--section); }
 .related h2 { margin-bottom: 1.75rem; }
 .added, .demo, .compare { margin-top: 1.25rem; }
+.category { margin-bottom: .8rem; }
+.interior-panel .interior-list { margin-bottom: 1.15rem; }
 </style>

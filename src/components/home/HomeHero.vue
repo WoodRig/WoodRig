@@ -7,11 +7,12 @@ import { concept } from '../../data/catalog'
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="state"><span></span> Rally · Prototipo en desarrollo</p>
+        <p class="state"><span></span> Rally · Primer cockpit previsto</p>
         <h1 id="hero-title">SIMRACING<br />EN CASA.</h1>
-        <p class="intro">Cockpits de madera y acero para conducir en casa y recuperar espacio entre sesiones.</p>
+        <p class="intro">Cockpits y soportes de madera y acero para simracing en casa. La primera prueba empieza por los pedales.</p>
         <div class="actions">
-          <RouterLink class="button" to="/cockpits">Comparar Rally y Formula <ArrowDownRight :size="16" aria-hidden="true" /></RouterLink>
+          <RouterLink class="button" to="/productos">Explorar la gama <ArrowDownRight :size="16" aria-hidden="true" /></RouterLink>
+          <RouterLink class="text-link" to="/cockpits">Comparar los cockpits</RouterLink>
         </div>
       </div>
       <figure class="product">

@@ -1,5 +1,7 @@
 # Mercado y competencia de WoodRig
 
+La ampliación a España y Europa está en el [inventario de competencia](inventario-competencia.md). Las prioridades actualizadas están en la [propuesta de gama](propuesta-gama.md).
+
 Consulta de escaparates y fichas el 26 de noviembre de 2026. Mercado inicial propuesto para el piloto — España peninsular. Los precios observados son referencias promocionales o de escaparate, sujetas a disponibilidad y envío.
 
 | Alternativa | Precio observado | Qué resuelve | Implicación para WoodRig |

@@ -1,6 +1,7 @@
 export interface Category {
   slug: string
   name: string
+  description: string
 }
 
 export interface ProductMedia {
@@ -16,6 +17,9 @@ export interface Product {
   name: string
   description: string
   category: Category
+  status: string
+  pending: readonly string[]
+  demo?: true
   media?: ProductMedia
 }
 

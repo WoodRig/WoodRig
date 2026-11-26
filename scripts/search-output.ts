@@ -23,14 +23,15 @@ export function searchOutput(siteUrl: string | undefined): Plugin {
       for (const [path, metadata] of Object.entries(pages)) {
         const target = resolve(directory, path === '/' ? 'index.html' : path.slice(1) + '.html')
         const canonical = origin && !metadata.noindex ? origin + path : ''
-        const image = origin ? new URL(metadata.image, origin).href : metadata.image
+        const image = origin && metadata.image ? new URL(metadata.image, origin).href : metadata.image
         const html = shell
           .replace(/<title>[^<]*<\/title>/, () => `<title>${escape(metadata.title)}</title>`)
           .replace(/(<meta name="description" content=")[^"]*/, (_, tag) => tag + escape(metadata.description))
           .replace(/(<meta name="robots" content=")[^"]*/, (_, tag) => tag + (metadata.noindex ? 'noindex, follow' : 'index, follow'))
           .replace(/(<meta property="og:title" content=")[^"]*/, (_, tag) => tag + escape(metadata.title))
           .replace(/(<meta property="og:description" content=")[^"]*/, (_, tag) => tag + escape(metadata.description))
-          .replace(/(<meta property="og:image" content=")[^"]*/, (_, tag) => tag + escape(image))
+          .replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, () => image
+            ? `<meta property="og:image" content="${escape(image)}" />` : '')
           .replace('<link rel="canonical" />', () => canonical ? `<link rel="canonical" href="${escape(canonical)}" />` : '')
         await mkdir(dirname(target), { recursive: true })
         await writeFile(target, html)

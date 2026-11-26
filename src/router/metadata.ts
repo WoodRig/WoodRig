@@ -9,7 +9,15 @@ export function updatePageMetadata(route: RouteLocationNormalized) {
   setContent('meta[name="description"]', metadata.description)
   setContent('meta[property="og:title"]', metadata.title)
   setContent('meta[property="og:description"]', metadata.description)
-  setContent('meta[property="og:image"]', new URL(metadata.image, origin ?? window.location.origin).href)
+  const existingImage = document.querySelector('meta[property="og:image"]')
+  if (metadata.image) {
+    const image = existingImage ?? document.createElement('meta')
+    image.setAttribute('property', 'og:image')
+    image.setAttribute('content', new URL(metadata.image, origin ?? window.location.origin).href)
+    if (!existingImage) document.head.append(image)
+  } else {
+    existingImage?.remove()
+  }
   setContent('meta[name="robots"]', metadata.noindex ? 'noindex, follow' : 'index, follow')
 
   const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
