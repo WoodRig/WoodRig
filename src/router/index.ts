@@ -3,14 +3,6 @@ import { site } from '../config/site'
 import { categories } from '../data/catalog'
 import { updatePageMetadata } from './metadata'
 
-export const primaryNav = [
-  { path: '/productos', label: 'Gama' },
-  { path: '/cockpits', label: 'Cockpits' },
-  { path: '/soportes', label: 'Soportes' },
-  { path: '/accesorios', label: 'Accesorios' },
-  { path: '/ingenieria', label: 'Ingeniería' },
-]
-
 const catalog = () => import('../views/CatalogView.vue')
 const brand = () => import('../views/BrandView.vue')
 const commerce = () => import('../views/CommerceView.vue')
@@ -19,10 +11,8 @@ export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: () => import('../views/HomeView.vue') },
-    { path: '/productos', component: catalog },
-    { path: '/cockpits', component: () => import('../views/CockpitsView.vue') },
-    ...categories.filter(({ slug }) => slug !== 'cockpits')
-      .map(({ slug }) => ({ path: '/' + slug, component: catalog })),
+    ...['/productos', ...categories.map(({ slug }) => '/' + slug)]
+      .map((path) => ({ path, component: catalog, meta: { catalog: true } })),
     { path: '/configurador', component: () => import('../views/ConfiguratorView.vue') },
     { path: '/ingenieria', component: brand },
     { path: '/nosotros', component: brand },
@@ -36,7 +26,7 @@ export const router = createRouter({
       component: () => import('../views/LegalView.vue'),
       meta: { legalId: id },
     })),
-    { path: '/producto/:slug', name: 'product', component: () => import('../views/ProductView.vue') },
+    { path: '/producto/:slug', name: 'product', component: () => import('../views/ProductView.vue'), meta: { catalog: true } },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('../views/NotFoundView.vue') },
   ],
   scrollBehavior(to, from, saved) {

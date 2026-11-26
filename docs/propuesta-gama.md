@@ -27,4 +27,4 @@ El contraste con el piloto anterior importa. Una caja de pedales permite comprar
 
 La lista define el **catálogo conceptual** de esta entrega. El orden expresa prioridad de trabajo. Cada ficha indica su estado y las pruebas pendientes. [Piloto y costes](costes-y-viabilidad.md) · [Investigación anterior](mercado-y-competencia.md)
 
-Los importes públicos del catálogo son hipótesis redondeadas sin envío. Los 519 € de Rally trasladan al escaparate la referencia interna de 429 € netos. El resto se sitúa frente a referencias de la categoría, con un precio de pack inferior a la suma de los soportes. Sustituirlos al cerrar cotizaciones y validar la disposición a pagar.
+Los importes públicos del catálogo son hipótesis redondeadas sin envío. Los 479 € de Rally son un precio de prueba a contrastar con el modelo interno de costes. El pack cuesta menos que los dos soportes por separado. Sustituir los importes al cerrar cotizaciones y validar la disposición a pagar.

@@ -1,7 +1,7 @@
 import { site } from '../config/site'
 import { categories, products } from './catalog'
 
-const description = 'Cockpits y soportes de simracing de madera y acero en desarrollo. Compara Rally y Formula y comprueba qué espacio necesita tu equipo.'
+const description = 'Cockpits y soportes de simracing de madera y acero en desarrollo. Explora la gama y comprueba qué espacio necesita tu equipo.'
 const image = '/images/woodrig-rally.webp'
 
 interface SearchPage {
@@ -30,7 +30,6 @@ export const searchPages: Readonly<Record<string, SearchPage>> = {
   ...Object.fromEntries(categories.map(({ slug, name, description: summary }) => [
     '/' + slug, page(name + ' de simracing', summary),
   ])),
-  '/cockpits': page('Compara los cockpits Rally y Formula', 'Compara la postura vertical de Rally y la reclinada de Formula, y comprueba qué medir en casa.'),
   '/configurador': page('Configurador de simracing', 'Combina un concepto WoodRig con accesorios y comparte tu selección.'),
   '/ingenieria': page('Ingeniería y materiales', 'Descubre cómo WoodRig plantea la estructura, las uniones y los materiales de sus cockpits y soportes.'),
   '/nosotros': page('Sobre WoodRig', 'Conoce el proyecto y su enfoque para diseñar equipos de simracing que encajen en casa.'),

@@ -4,8 +4,8 @@ Revisión experta en navegador, escritorio y móvil de 390 px. En la versión de
 
 | Ruta | Decisión que debe resolver | Acción principal |
 | --- | --- | --- |
-| Portada | Entender el producto y si aporta algo en un espacio compartido | Comparar los dos cockpits |
-| Cockpits | Elegir postura y saber qué está pendiente de validar | Explorar la ficha del modelo |
+| Portada | Entender el producto y si aporta algo en un espacio compartido | Explorar los productos |
+| Productos y categorías | Filtrar propuestas y comparar las fichas de un mismo tipo | Abrir la ficha del modelo |
 | Compatibilidad | Preparar medidas del espacio, volante, pedales y asiento | Revisar las medidas que pide la guía |
 | Ficha | Ver el concepto, consultar montaje y valorar la configuración | Consultar qué medir |
 | Configurador | Probar y compartir una combinación conceptual | Compartir la configuración |
@@ -13,7 +13,7 @@ Revisión experta en navegador, escritorio y móvil de 390 px. En la versión de
 
 La portada se ha reconstruido como una presentación de producto. Mantiene madera cálida, grafito y crema. Barlow Condensed en el titular aporta el gesto tipográfico principal. Manrope conserva legibilidad en instrucciones y controles. La densidad baja en la portada y aumenta en la guía y el catálogo. El carrito queda disponible como acción secundaria en las fichas.
 
-La secuencia de scroll revela dos estudios de producto y explica qué medir en cada momento. En móvil o con movimiento reducido, los estudios aparecen en orden con su texto. La imagen de recogida es un concepto independiente. Un vídeo del prototipo deberá mostrar el recorrido y el hardware que queda montado. La comparación abre el configurador con la postura elegida y conserva un acceso a cada ficha.
+La secuencia de scroll revela dos estudios de producto y explica qué medir en cada momento. En móvil o con movimiento reducido, los estudios aparecen en orden con su texto. La imagen de recogida es un concepto independiente. Un vídeo del prototipo deberá mostrar el recorrido y el hardware que queda montado. El menú Productos agrupa el catálogo y todas las categorías. Cockpits, Soportes y el resto comparten la vista de listado. Cada cockpit conserva su ficha y desde allí puede abrirse en el configurador.
 
 ## Prueba con usuarios pendiente
 

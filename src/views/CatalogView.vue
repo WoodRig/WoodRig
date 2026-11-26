@@ -18,11 +18,11 @@ watch(() => route.path, () => { search.value = '' })
 
 <template>
   <div class="wrap interior">
-    <PageIntro label="Catálogo conceptual" :title="category?.name ?? 'Gama WoodRig'"
+    <PageIntro label="Catálogo conceptual" :title="category?.name ?? 'Productos WoodRig'"
       :description="category?.description ?? 'Explora las propuestas en orden de desarrollo, desde la primera plataforma de pedales hasta las ampliaciones previstas.'" />
     <div class="toolbar">
       <nav aria-label="Categorías del catálogo">
-        <RouterLink to="/productos">Toda la gama</RouterLink>
+        <RouterLink to="/productos">Todos los productos</RouterLink>
         <RouterLink v-for="item in categories" :key="item.slug" :to="'/' + item.slug">{{ item.name }}</RouterLink>
       </nav>
       <label class="interior-field">Buscar productos<input v-model="search" type="search" /></label>
