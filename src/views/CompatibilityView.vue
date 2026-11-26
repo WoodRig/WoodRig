@@ -3,6 +3,11 @@ import { computed, ref } from 'vue'
 import PageIntro from '../components/common/PageIntro.vue'
 
 const groups = {
+  espacio: { title: 'Espacio en casa', items: [
+    'Mide ancho y fondo del hueco en uso y del lugar donde guardarías el equipo.',
+    'Deja espacio para entrar al asiento, ajustar la pedalera y conectar los cables.',
+    'Mide el paso más estrecho que hay entre ambos lugares y anota qué componentes tendrías que desmontar.',
+  ] },
   volante: { title: 'Volantes y bases', items: [
     'Mide la distancia entre centros de los orificios de montaje.',
     'Comprueba la orientación de montaje y el espacio para los conectores.',
@@ -19,7 +24,7 @@ const groups = {
     'Comprueba el espacio que necesita el asiento para desplazarse o reclinarse.',
   ] },
 }
-const selected = ref<keyof typeof groups>('volante')
+const selected = ref<keyof typeof groups>('espacio')
 const group = computed(() => groups[selected.value])
 </script>
 

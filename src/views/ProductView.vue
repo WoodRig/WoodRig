@@ -34,14 +34,14 @@ function add() {
           <figcaption class="interior-caption">Render conceptual · {{ product.name }}</figcaption>
         </figure>
         <div class="interior-panel">
-          <h2>Prepara tu equipo</h2>
-          <p class="lede">Prueba esta familia en el configurador o añádela directamente a tu carrito de demostración.</p>
+          <h2>Comprueba si encaja con tu equipo</h2>
+          <p class="lede">Concepto en desarrollo. Las medidas, el montaje y la compatibilidad específica están pendientes de validación.</p>
           <div class="actions">
-            <button class="button" type="button" @click="add">Añadir al carrito</button>
-            <RouterLink class="button outline" :to="{ path: '/configurador', query: { modelo: product.slug } }">Configurar</RouterLink>
+            <RouterLink class="button" to="/compatibilidad">Consultar qué medir</RouterLink>
+            <RouterLink class="button outline" :to="{ path: '/configurador', query: { modelo: product.slug } }">Probar configuración</RouterLink>
           </div>
           <p v-if="added" class="added" role="status">Añadido al carrito. <RouterLink class="text-link" to="/carrito">Ver carrito</RouterLink></p>
-          <p class="compatibility"><RouterLink class="text-link" to="/compatibilidad">Consultar compatibilidad</RouterLink></p>
+          <button class="button outline demo" type="button" @click="add">Añadir al carrito de prueba</button>
         </div>
       </div>
       <section class="related" aria-labelledby="related-title">
@@ -59,5 +59,5 @@ function add() {
 <style scoped>
 .related { margin-top: var(--section); }
 .related h2 { margin-bottom: 1.75rem; }
-.added, .compatibility { margin-top: 1.25rem; }
+.added, .demo { margin-top: 1.25rem; }
 </style>
