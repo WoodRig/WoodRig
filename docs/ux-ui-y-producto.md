@@ -13,6 +13,8 @@ Revisión experta en navegador, escritorio y móvil de 390 px. En la versión de
 
 La portada se ha reconstruido como una presentación de producto. Mantiene madera cálida, grafito y crema. Barlow Condensed en el titular aporta el gesto tipográfico principal. Manrope conserva legibilidad en instrucciones y controles. La densidad baja en la portada y aumenta en la guía y el catálogo. El carrito queda disponible como acción secundaria en las fichas.
 
+La secuencia de scroll revela dos estudios de producto y explica qué medir en cada momento. En móvil o con movimiento reducido, los estudios aparecen en orden con su texto. La imagen de recogida es un concepto independiente. Un vídeo del prototipo deberá mostrar el recorrido y el hardware que queda montado. La comparación abre el configurador con la postura elegida y conserva un acceso a cada ficha.
+
 ## Prueba con usuarios pendiente
 
 Pide a cinco personas del segmento prioritario que comparen posturas, encuentren qué medir y expliquen el estado del producto. Registra recorrido, errores y tiempo. Objetivo del piloto UX — cuatro de cinco completan las tres tareas en menos de tres minutos sin ayuda. Confirma por separado si las fotografías o un vídeo real bastan para entender la recogida.

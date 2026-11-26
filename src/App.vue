@@ -3,9 +3,6 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import SiteHeader from './components/layout/SiteHeader.vue'
 import SiteFooter from './components/layout/SiteFooter.vue'
-import { useSmoothWheel } from './composables/useSmoothWheel'
-
-useSmoothWheel()
 
 const { currentRoute } = useRouter()
 const content = ref<HTMLElement>()

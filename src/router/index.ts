@@ -19,7 +19,8 @@ export const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: () => import('../views/HomeView.vue') },
     { path: '/productos', component: catalog, meta: { title: 'Toda la gama', description: 'Explora los cockpits, soportes, accesorios y packs de simracing que WoodRig está desarrollando.' } },
-    ...primaryNav.slice(0, 4).map(({ path, label }) => ({
+    { path: '/cockpits', component: () => import('../views/CockpitsView.vue'), meta: { title: 'Comparar Formula y Rally' } },
+    ...primaryNav.slice(1, 4).map(({ path, label }) => ({
       path, component: catalog, meta: { title: label, description: `Explora la familia ${label.toLowerCase()} de WoodRig y descubre sus propuestas para tu equipo de simracing.` },
     })),
     { path: '/configurador', component: () => import('../views/ConfiguratorView.vue'), meta: { title: 'Configurador', description: 'Elige un modelo WoodRig, combina componentes y comparte tu configuración de simracing.' } },
